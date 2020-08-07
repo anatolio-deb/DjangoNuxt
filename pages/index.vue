@@ -85,6 +85,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
 
@@ -92,6 +93,12 @@ export default {
   components: {
     Logo,
     VuetifyLogo
+  },
+  methods: {
+    ...mapActions('tasks', ['getAlltasks'])
+  },
+  mounted() {
+    this.getAlltasks()
   }
 }
 </script>
